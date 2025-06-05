@@ -9,6 +9,8 @@ const io = socketIo(server);
 
 const PORT = process.env.port || 3000;
 
+
+
 let players = new Set();
 
 //#region  PLAYER
@@ -123,6 +125,10 @@ s
              player.getSocket().emit("playerExit",deletePlayer.getID())
          })
     });
+});
+
+app.get("/", (req, res) => {
+  res.send("Socket.IO server is running 🚀");
 });
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
