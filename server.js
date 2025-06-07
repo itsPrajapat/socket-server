@@ -82,7 +82,7 @@ io.on("connection", (socket) => {
                 player.getSocket().emit("AddPlayer",playerJson)                 
             })
     });
-s
+
     // Player movement
     socket.on("move",( id,position,rotation) => 
     {
